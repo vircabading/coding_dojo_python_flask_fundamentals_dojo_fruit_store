@@ -24,7 +24,7 @@
         <section class="jumbotron text-center">
           <div class="container">
             <h1 class="jumbotron-heading">Thank you for your order!</h1>
-            <p class="lead text-muted">We ordered 5 items for you and charged your student account on March 23rd 2019 5:15:35 PM.</p>
+            <p class="lead text-muted">We ordered {{ total_num_ordered }} items for you {{first_name}} {{last_name}} and charged your student account on {{ current_date_time }}.</p>
           </div>
         </section>
   
@@ -41,7 +41,7 @@
                     <tbody>
                     <tr>
                         <td>Strawberry</td>
-                        <td>{{ stawberry_num }}</td>
+                        <td>{{ strawberry_num }}</td>
                     </tr>
                     <tr>
                         <td>Raspberry</td>
