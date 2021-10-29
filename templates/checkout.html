@@ -24,7 +24,7 @@
         <section class="jumbotron text-center">
           <div class="container">
             <h1 class="jumbotron-heading">Thank you for your order!</h1>
-            <p class="lead text-muted">We ordered {{ total_num_ordered }} items for you {{session['first_name']}} {{session['last_name']}} and charged your student account on {{ current_date_time }}.</p>
+            <p class="lead text-muted">We ordered {{ total_num_ordered }} items for you {{session['fruit_store']['first_name']}} {{session['fruit_store']['last_name']}} and charged your student account on {{ current_date_time }}.</p>
           </div>
         </section>
   
@@ -41,15 +41,15 @@
                     <tbody>
                     <tr>
                         <td>Strawberry</td>
-                        <td>{{ session['strawberry_num'] }}</td>
+                        <td>{{ session['fruit_store']['strawberry'] }}</td>
                     </tr>
                     <tr>
                         <td>Raspberry</td>
-                        <td>{{ session['raspberry_num'] }}</td>
+                        <td>{{ session['fruit_store']['raspberry'] }}</td>
                     </tr>
                     <tr>
                         <td>Apple</td>
-                        <td>{{ session['apple_num'] }}</td>
+                        <td>{{ session['fruit_store']['apple'] }}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -57,15 +57,15 @@
                 <h4 class="mb-3">Your Information</h4>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        First Name: {{ session['first_name'] }}
+                        First Name: {{ session['fruit_store']['first_name'] }}
                     </div>
                     <div class="col-md-6 mb-3">
-                        Last Name: {{ session['last_name'] }}
+                        Last Name: {{ session['fruit_store']['last_name'] }}
                     </div>
                 </div>
   
                 <div class="mb-3">
-                    Your Student ID: {{ session['student_id'] }}
+                    Your Student ID: {{ session['fruit_store']['student_id'] }}
                 </div>
               
                 <hr class="mb-4">
