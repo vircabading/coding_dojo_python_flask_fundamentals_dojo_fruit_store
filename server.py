@@ -6,11 +6,6 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-# @app.route('/checkout')         
-# def checkout():
-#     # print(request.form)
-#     return render_template("checkout.html")
-
 @app.route('/checkout', methods=['POST'])         
 def checkout():
     print(request.form)
