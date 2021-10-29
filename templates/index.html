@@ -1,9 +1,11 @@
 <html>
 <head>
-    <title>Dojo Fruit Store Assignment</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Dojo Fruit Store</title>
 </head>
 <body>
+  <!-- //// HEADER //////// -->
   <header>
     <div class="navbar navbar-dark bg-dark box-shadow">
       <div class="container d-flex justify-content-between">
@@ -18,13 +20,32 @@
     </div>
   </header>
   
+  <!-- //// MAIN AREA //////// -->
   <main role="main">
     <div class="container">
       <div class="row">
-        <div class="col-8">
+        
+        <!-- **** LEFT COLUMN IN MAIN AREA -->
+        <div class="col-md-4">
+          <section class="jumbotron text-center">
+            <div class="container">
+              <h1 class="jumbotron-heading">Dojo Fruit Store!</h1>
+              <p class="lead text-muted">Your dojo decided to buy fruits for all the students! Please use this app to tell us what you would like to have!  Once we get your order, we'll charge your student account automatically.</p>
+              <p>
+                <a href="#buy" class="btn btn-primary my-2">Order fruits from the store</a>
+                <a href="/fruits" class="btn btn-secondary my-2">See Fruits</a>
+              </p>
+            </div>
+          </section>
+        </div>
+        
+        <!-- **** RIGHT COLUMN IN MAIN AREA -->
+        <div class="col-md-8">
           <div class="album py-5 bg-light">
             <div class="container">
-               <form action='/checkout' method='post'>
+              <form action='/checkout' method='post'>
+
+                <!-- **** Fruit Selection Table ******** -->
                 <h4 class="mb-3" id='buy'>What would you like to buy?</h4>
                 <table class="table table-striped">
                   <thead>
@@ -73,13 +94,14 @@
                   </tbody>
                 </table>
                 
+                <!-- **** User Information Table ******** -->
                 <h4 class="mb-3" id='info'>Your Information</h4>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
+                <div class="row">                                       
+                  <div class="col-md-6 mb-3">                         <!-- **** First Name **** -->
                     <label for="firstName">First name</label>
                     <input type="text" class="form-control" name="first_name" placeholder="" value="">
                   </div>
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-6 mb-3">                         <!-- **** Last Name **** -->
                     <label for="lastName">Last name</label>
                     <input type="text" class="form-control" name="last_name" placeholder="" value="">
                   </div>
@@ -93,23 +115,11 @@
                 <hr class="mb-4">
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Checkout</button>
               </form>
-              
-              
+                            
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <section class="jumbotron text-center">
-            <div class="container">
-              <h1 class="jumbotron-heading">Dojo Fruit Store!</h1>
-              <p class="lead text-muted">Your dojo decided to buy fruits for all the students! Please use this app to tell us what you would like to have!  Once we get your order, we'll charge your student account automatically.</p>
-              <p>
-                <a href="#buy" class="btn btn-primary my-2">Order fruits from the store</a>
-                <a href="/fruits" class="btn btn-secondary my-2">See Fruits</a>
-              </p>
-            </div>
-          </section>
-        </div>  
+        
       </div>
     </div>    
   </main>
