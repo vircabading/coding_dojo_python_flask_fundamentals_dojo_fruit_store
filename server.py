@@ -5,11 +5,11 @@ from werkzeug.datastructures import RequestCacheControl
 app = Flask(__name__)
 app.secret_key = "TiYSKDNRitA!"                                                     # This is Your Secret Key Do Not Reveal it to Anyone!
 
-@app.route('/')         
+@app.route('/')                                                                     # Main Page
 def index():
     return render_template("index.html")
 
-@app.route('/post_checkout', methods=['POST'])
+@app.route('/post_checkout', methods=['POST'])                                      # Page to handle data from submitting the checkout form
 def post_checkout():
     print(request.form)
     session['strawberry_num'] = request.form['strawberry']                          # Retrieve variables from the form
@@ -21,13 +21,13 @@ def post_checkout():
     return redirect ("/checkout")
     
 
-@app.route('/checkout')         
+@app.route('/checkout')                                                             # Page for showing the checkout info
 def checkout():
     current_date_time = datetime.datetime.now()
     total_num_ordered = int(session['strawberry_num']) + int(session['raspberry_num']) + int(session['apple_num'])
     return render_template("checkout.html", total_num_ordered= total_num_ordered, current_date_time= current_date_time)
 
-@app.route('/fruits')         
+@app.route('/fruits')                                                               # display the fruit pictures
 def fruits():
     return render_template("fruits.html")
 
